@@ -8,7 +8,7 @@ module.exports = function longestConsecutiveLength(array) {
         if (array[i] === lastNo + 1) {
             currSequence++;
             maxSequence = Math.max(maxSequence,currSequence);
-        }else currSequence = 1;
+        }else if(array[i]!==lastNo) currSequence = 1;
         lastNo = array[i];
     }
     return Math.max(maxSequence, currSequence);
